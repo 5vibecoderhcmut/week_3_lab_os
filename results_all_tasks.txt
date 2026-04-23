@@ -1,0 +1,91 @@
+========================================
+Task 3.1 - Single Thread (Baseline)
+========================================
+
+Running single-threaded approach with 10,000,000 samples...
+Running 5 times to compute average...
+
+======================================================================
+BASELINE (SINGLE-THREADED) RESULTS
+======================================================================
+Number of samples:    10,000,000
+Number of runs:       5
+Average execution time: 1.962977 seconds
+Min execution time:     1.950725 seconds
+Max execution time:     1.971184 seconds
+Std deviation:          0.010229 seconds
+
+Estimated Pi:         3.14217360
+True Pi:              3.14159265
+Accuracy:             99.9815%
+======================================================================
+
+
+========================================
+Task 3.2 - Multi-Thread (Local Accumulation)
+========================================
+
+Running multi-threaded approach with 10,000,000 samples...
+Running 3 times per configuration for averaging...
+
+Testing with  1 thread(s)... Avg time: 1.987041s, Speedup: 1.0000x, Efficiency: 100.00%
+Testing with  2 thread(s)... Avg time: 1.968870s, Speedup: 1.0092x, Efficiency: 50.46%
+Testing with  4 thread(s)... Avg time: 1.954275s, Speedup: 1.0168x, Efficiency: 25.42%
+Testing with  8 thread(s)... Avg time: 2.308943s, Speedup: 0.8606x, Efficiency: 10.76%
+Testing with 16 thread(s)... Avg time: 2.108733s, Speedup: 0.9423x, Efficiency: 5.89%
+Testing with 32 thread(s)... Avg time: 2.112143s, Speedup: 0.9408x, Efficiency: 2.94%
+Testing with 64 thread(s)... Avg time: 1.992366s, Speedup: 0.9973x, Efficiency: 1.56%
+
+==========================================================================================
+MULTI-THREADED (LOCAL ACCUMULATION) RESULTS
+==========================================================================================
+Threads  Avg Time (s)    Speedup      Efficiency   Accuracy    
+------------------------------------------------------------------------------------------
+1        1.987041        1.0000      x 100.00      % 99.9815     %
+2        1.968870        1.0092      x 50.46       % 99.9654     %
+4        1.954275        1.0168      x 25.42       % 99.9687     %
+8        2.308943        0.8606      x 10.76       % 99.9977     %
+16       2.108733        0.9423      x 5.89        % 99.9863     %
+32       2.112143        0.9408      x 2.94        % 99.9912     %
+64       1.992366        0.9973      x 1.56        % 99.9806     %
+==========================================================================================
+
+True Pi: 3.14159265
+Estimated Pi (final run): 3.14220093
+
+Baseline time (1 thread): 1.987041 seconds
+Maximum speedup achieved: 0.9973x
+
+
+========================================
+Task 3.3 - Shared Variable with Mutex
+========================================
+
+Running multiprocessing approach (shared counter with lock) with 10,000,000 samples...
+Running 3 times per configuration for averaging...
+
+Testing with  1 process(es)... Avg time: 2.111087s, Speedup: 1.0000x, Efficiency: 100.00%
+Testing with  2 process(es)... Avg time: 1.098090s, Speedup: 1.9225x, Efficiency: 96.13%
+Testing with  4 process(es)... Avg time: 0.572475s, Speedup: 3.6876x, Efficiency: 92.19%
+Testing with  8 process(es)... Avg time: 0.466995s, Speedup: 4.5206x, Efficiency: 56.51%
+
+==========================================================================================
+MULTI-PROCESS (SHARED VARIABLE WITH LOCK) RESULTS
+==========================================================================================
+Processes    Avg Time (s)    Speedup      Efficiency   Accuracy    
+------------------------------------------------------------------------------------------
+1            2.111087        1.0000      x 100.00      % 99.9815     %
+2            1.098090        1.9225      x 96.13       % 99.9543     %
+4            0.572475        3.6876      x 92.19       % 99.9712     %
+8            0.466995        4.5206      x 56.51       % 99.9909     %
+==========================================================================================
+
+True Pi: 3.14159265
+Estimated Pi (final run): 3.14130640
+
+Baseline time (1 process): 2.111087 seconds
+Maximum speedup achieved: 4.5206x
+
+This version uses a shared counter plus a lock across processes, but only updates the shared state once per process.
+It therefore still shows speedup while preserving the shared-variable-with-synchronization pattern.
+

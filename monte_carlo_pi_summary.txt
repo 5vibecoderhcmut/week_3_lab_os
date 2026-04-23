@@ -1,0 +1,19 @@
+Monte Carlo Pi Estimation - Performance Statistics
+============================================================
+
+Baseline (Task 3.1): 0.096267 seconds
+
+Task Results:
+------------------------------------------------------------
+Task_3_2_Local_Accumulation: 1 threads, Time: 0.092138s, Speedup: 1.0000x, Efficiency: 100.00%, Accuracy: 99.9868%
+Task_3_2_Local_Accumulation: 2 threads, Time: 0.044502s, Speedup: 2.0704x, Efficiency: 103.52%, Accuracy: 99.9998%
+Task_3_2_Local_Accumulation: 4 threads, Time: 0.024913s, Speedup: 3.6984x, Efficiency: 92.46%, Accuracy: 99.9852%
+Task_3_2_Local_Accumulation: 8 threads, Time: 0.019505s, Speedup: 4.7237x, Efficiency: 59.05%, Accuracy: 99.9915%
+Task_3_2_Local_Accumulation: 16 threads, Time: 0.016953s, Speedup: 5.4350x, Efficiency: 33.97%, Accuracy: 99.9905%
+Task_3_2_Local_Accumulation: 32 threads, Time: 0.015853s, Speedup: 5.8121x, Efficiency: 18.16%, Accuracy: 99.9999%
+Task_3_3_Shared_Variable_Mutex: 1 threads, Time: 0.139657s, Speedup: 1.0000x, Efficiency: 100.00%, Accuracy: 99.9868%
+Task_3_3_Shared_Variable_Mutex: 2 threads, Time: 0.275679s, Speedup: 0.5066x, Efficiency: 25.33%, Accuracy: 99.9998%
+Task_3_3_Shared_Variable_Mutex: 4 threads, Time: 0.399139s, Speedup: 0.3499x, Efficiency: 8.75%, Accuracy: 99.9852%
+Task_3_3_Shared_Variable_Mutex: 8 threads, Time: 0.526075s, Speedup: 0.2655x, Efficiency: 3.32%, Accuracy: 99.9915%
+Task_3_3_Shared_Variable_Mutex: 16 threads, Time: 0.453750s, Speedup: 0.3078x, Efficiency: 1.92%, Accuracy: 99.9905%
+Task_3_3_Shared_Variable_Mutex: 32 threads, Time: 0.462563s, Speedup: 0.3019x, Efficiency: 0.94%, Accuracy: 99.9999%
